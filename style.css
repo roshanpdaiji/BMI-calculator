@@ -1,0 +1,132 @@
+/* Global reset for margin, padding, and box-sizing */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling with background image and centered layout */
+body {
+    min-height: 100vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center container both horizontally and vertically */
+}
+
+/* Main container styling */
+.container {
+    position: relative;
+    width: 350px; /* Width of the container */
+    padding: 20px; /* Padding inside the container */
+    border-radius: 30px; /* Rounded corners */
+    background: linear-gradient(135deg, #ffffff, #b64343); /* Gradient background for visual effect */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+/* Styling for the inner box that holds the content */
+.box {
+    background-color: whitesmoke; /* Background of the box */
+    border-radius: 30px; /* Rounded corners */
+    text-align: center; /* Centered text inside */
+    padding: 20px; /* Padding inside the box */
+    position: relative; /* For stacking context */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for visual appeal */
+    overflow: hidden; /* Hides overflow from pseudo-element */
+    z-index: 1; /* Ensure content stays above the pseudo-element */
+}
+
+/* Decorative background for the box using a pseudo-element */
+.box::before {
+    content: '';
+    position: absolute;
+    height: 110%; /* Larger than box to create shadow effect */
+    width: 110%;
+    left: -5%;
+    top: -5%;
+    background-color: rgb(247, 245, 242); /* Light background for contrast */
+    z-index: -1; /* Behind the box content */
+    border-radius: inherit; /* Match the border-radius of the box */
+}
+
+/* Headings and sections spacing */
+h1, .content, .result {
+    margin-bottom: 20px; /* Adds space between elements */
+}
+
+/* Input group styling for both height and weight input fields */
+.input {
+    display: flex;
+    flex-direction: column; /* Stack label and input vertically */
+    align-items: center; /* Center content horizontally */
+    background-color: #d59191; /* Light background for input group */
+    padding: 15px; /* Padding inside the input group */
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 15px; /* Space between input fields */
+    width: 100%; /* Full width of the container */
+}
+
+/* Label styling for inputs */
+.input label {
+    margin-bottom: 8px; /* Space between label and input */
+    font-weight: bold; /* Bold text for labels */
+}
+
+/* Input field styling */
+input {
+    padding: 10px; /* Padding inside the input */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    width: 100%; /* Full width input field */
+    margin-top: 8px; /* Space above the input */
+}
+
+/* Button styling for the BMI calculator button */
+button {
+    padding: 10px 20px; /* Padding inside the button */
+    background-color: #c64e46; /* Button background color */
+    border: none; /* Remove default border */
+    color: white; /* White text color */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color change on hover */
+    font-weight: 700;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #4f241c; /* Darken the button color on hover */
+}
+
+
+/* Optional: Add specific styles for the clear button if desired */
+#clear {
+    background-color: #e7b03f; /* Different background color for clear button */
+}
+
+#clear:hover {
+    background-color: #f3c64f; /* Darken clear button on hover */
+}
+
+/* Styling for the BMI result value */
+.bmi-value {
+    font-size: 24px; /* Large font for BMI value */
+    font-weight: bold; /* Bold text */
+    margin: 10px 0; /* Space above and below */
+    background-color: #d17e71; /* Highlight background color */
+    padding: 10px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* General comment styling */
+.comment {
+    color: #131212; /* Grey text color */
+    font-size: 16px; /* Moderate font size */
+}
+
+/* Highlighted text inside the comment */
+.highlight {
+    color: #c73909; /* Red color to highlight 'overweight' */
+    padding: 2px 5px; /* Padding around the highlighted text */
+    border-radius: 3px; /* Rounded corners */
+}
